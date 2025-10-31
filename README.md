@@ -15,19 +15,26 @@ Built with the **Godot Engine**, this open-source demo runs on:
 - 🧩 Simple project structure — great for learning Godot  
 - 🌍 Easy to localize and modify
 
+## 🖼️ Screenshots  
+Here’s a glimpse into the world of *The White Hell*:
+
+![Main Menu](screenshots/main_menu.png)
+
+![Dialogue Scene](screenshots/dialogue_scene.png)
+
+![Exploration](screenshots/exploration.png)
+
 ## 📦 Installation  
 1. Clone the repository:  
    ```bash
    git clone https://github.com/your-repo/TheWhiteHellDemo.git
    ```
-2. Open the project in **Godot 3.x or 4.x**  
-3. Export to your desired platform (Android, Web, Desktop)  
-4. Launch and explore the White Hell...
-
-## 🧑‍💻 About LavinLab  
-We’re an indie studio of three passionate creators experimenting with visual novels, ethics, and aesthetics.  
-📧 Contact us: **lavinlab@mail.ru**
-
-## 📜 License  
-This project is released under the **MIT License**.  
+- Open the project in Godot 3.x or 4.x
+- Export to your desired platform (Android, Web, Desktop)
+- Launch and explore the White Hell...
+🧑‍💻 About LavinLab
+We’re an indie studio of three passionate creators experimenting with visual novels, ethics, and aesthetics.
+📧 Contact us: lavinlab@mail.ru
+📜 License
+This project is released under the MIT License.
 Feel free to use, modify, and distribute it in accordance with the license terms.
