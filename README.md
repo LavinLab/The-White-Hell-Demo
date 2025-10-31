@@ -1,4 +1,4 @@
-# 🕯️ The White Hell — Demo (Open Source)  
+# 🕯️The White Hell — Demo (Open Source)  
 _A Visual Novel in Black & White • Made with Godot_  
 **by LavinLab**
 
