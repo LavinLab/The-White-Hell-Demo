@@ -18,13 +18,11 @@ Built with the **Godot Engine**, this open-source demo runs on:
 ## 🖼️ Screenshots  
 Here’s a glimpse into the world of *The White Hell*:
 
-<p align="center">
-  <img src="screenshots/main_menu.png" alt="Main Menu" width="200"/>
-  <img src="screenshots/menu.png" alt="Menu" width="200"/>
-  <img src="screenshots/shop.png" alt="Shop Scene" width="200"/>
-  <img src="screenshots/gangsters.png" alt="Gangsters" width="200"/>
-  <img src="screenshots/game_name.png" alt="Game Name" width="200"/>
-</p>
+![Main Menu](screenshots/main_menu.png)  
+![Menu](screenshots/menu.png)  
+![Shop Scene](screenshots/shop.png)  
+![Gangsters](screenshots/gangsters.png)  
+![Game Name](screenshots/game_name.png)
 
 ## 📦 Installation  
 1. Clone the repository:  
