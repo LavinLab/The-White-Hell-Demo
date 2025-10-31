@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=3 uid="uid://bmsp304xu5tp4"]
+
+[ext_resource type="Texture2D" uid="uid://be5brrv6un78k" path="res://assets/textures/ui/new_text_box.png" id="1_bq315"]
+[ext_resource type="Script" uid="uid://bkyc5qe7n8txc" path="res://scenes/ui_in_game/text_box.gd" id="2_1vcvf"]
+[ext_resource type="Texture2D" uid="uid://ihelq5bjjyxh" path="res://assets/textures/ui/black_play_button.png" id="2_fm2t3"]
+[ext_resource type="FontFile" uid="uid://b2b136vfs8wsq" path="res://assets/fonts/Nunito-Bold.ttf" id="4_cg3gr"]
+[ext_resource type="LabelSettings" uid="uid://b6c0c1isi8ieu" path="res://assets/themes/name_label.tres" id="6_bq315"]
+[ext_resource type="LabelSettings" uid="uid://dlktkvfur4p66" path="res://assets/themes/text_label.tres" id="7_1vcvf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2bxue"]
+font = ExtResource("4_cg3gr")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
+
+[node name="TextBox" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.495
+anchor_top = 1.0
+anchor_right = 0.495
+anchor_bottom = 1.0
+offset_left = -258.2
+offset_top = -195.0
+offset_right = 258.8
+offset_bottom = 17.0
+texture = ExtResource("1_bq315")
+expand_mode = 1
+script = ExtResource("2_1vcvf")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Play" type="TextureRect" parent="Buttons"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -244.5
+offset_top = 56.0
+offset_right = -221.5
+offset_bottom = 78.0
+texture = ExtResource("2_fm2t3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Menu" type="Label" parent="Buttons"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 195.0
+offset_top = 52.0
+offset_right = 246.0
+offset_bottom = 82.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 0
+text = "Меню"
+label_settings = SubResource("LabelSettings_2bxue")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 34.0
+offset_right = 502.0
+offset_bottom = 53.0
+text = "Имя"
+label_settings = ExtResource("6_bq315")
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -54.0
+offset_right = 503.0
+offset_bottom = 49.0
+text = "Текст"
+label_settings = ExtResource("7_1vcvf")
+autowrap_mode = 2
+
+[connection signal="gui_input" from="Buttons/Play" to="." method="_on_play_gui_input"]
+[connection signal="gui_input" from="Buttons/Menu" to="." method="_on_menu_gui_input"]

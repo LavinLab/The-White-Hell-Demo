@@ -1,0 +1,614 @@
+[gd_scene load_steps=22 format=3 uid="uid://dwhcpdwvgdoe0"]
+
+[ext_resource type="Script" uid="uid://cc1ke7cuv66l7" path="res://scenes/menu_and_splash/menu.gd" id="1_v86rl"]
+[ext_resource type="Texture2D" uid="uid://ckxngcacuqlqt" path="res://assets/textures/ui/closed_diary.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://c7lsha4lpb6a6" path="res://assets/textures/ui/bookmarks.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c8xr1xvjxc2hs" path="res://assets/textures/ui/opened_diary.png" id="2_vjb58"]
+[ext_resource type="LabelSettings" uid="uid://ddnr1xqg8y5g8" path="res://assets/themes/act_names_label.tres" id="3_con2f"]
+[ext_resource type="LabelSettings" uid="uid://dbjrgevr5gp8i" path="res://assets/themes/desc_label.tres" id="4_mhnvy"]
+[ext_resource type="Theme" uid="uid://cfwrgtuux4phk" path="res://assets/themes/button_theme.tres" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://74ibts52b0s6" path="res://assets/textures/ui/new_next_page_button.jpg" id="5_sx3cw"]
+[ext_resource type="Theme" uid="uid://bx3wnu1s0hrq4" path="res://assets/themes/slider_theme.tres" id="8_i6lef"]
+[ext_resource type="FontFile" uid="uid://b2kdgb2b5tdkl" path="res://assets/fonts/Pacifico-Regular.ttf" id="10_rc150"]
+[ext_resource type="Texture2D" uid="uid://duecfkvicjaif" path="res://assets/textures/ui/trash_bins.png" id="11_4qslq"]
+[ext_resource type="Texture2D" uid="uid://dwe46cffahccg" path="res://assets/textures/ui/telegram_button.png" id="12_hmqno"]
+[ext_resource type="Texture2D" uid="uid://bfj0v83wvvyl2" path="res://assets/textures/ui/choise.png" id="13_ye8it"]
+[ext_resource type="Script" uid="uid://cinc8mj62kgsh" path="res://addons/GodotPlayGameServices/scripts/snapshots/snapshots_client.gd" id="14_4qslq"]
+[ext_resource type="AudioStream" uid="uid://o0msn6qpgfol" path="res://assets/audio/music/erik_satie_gymnopedies_one.ogg" id="14_ye8it"]
+[ext_resource type="Script" uid="uid://cwhxq5q4fmq1w" path="res://addons/GodotPlayGameServices/scripts/achievements/achievements_client.gd" id="15_n3vyp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
+atlas = ExtResource("2_g3eks")
+region = Rect2(380, 1302, 694, 1013)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("2_g3eks")
+region = Rect2(1201, 247, 582, 896)
+
+[sub_resource type="LabelSettings" id="LabelSettings_4qslq"]
+font = ExtResource("10_rc150")
+font_size = 12
+font_color = Color(0.230315, 0.230315, 0.230315, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rc150"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3vyp"]
+atlas = ExtResource("11_4qslq")
+region = Rect2(649, 156, 586, 669)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v86rl")
+hover_height = 10
+
+[node name="ClosedDiary" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_yqeox")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bookmarks" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DemoBookmark" type="TextureRect" parent="Bookmarks"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -198.0
+offset_right = 61.0
+offset_bottom = -131.0
+rotation = -0.139665
+mouse_filter = 0
+texture = SubResource("AtlasTexture_v86rl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingsBookmark" type="TextureRect" parent="Bookmarks"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -205.0
+offset_right = 108.0
+offset_bottom = -138.0
+rotation = 0.0750492
+mouse_filter = 0
+texture = SubResource("AtlasTexture_13sgg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpenedDiary" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_vjb58")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="Back" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -58.0
+offset_right = 137.0
+offset_bottom = -18.0
+grow_vertical = 0
+
+[node name="Arrow" type="TextureRect" parent="OpenedDiary/Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -13.0
+offset_right = 38.0
+offset_bottom = 13.0
+texture = ExtResource("5_sx3cw")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Forward" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -59.0
+offset_right = -54.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Arrow" type="TextureRect" parent="OpenedDiary/Forward"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -14.5
+offset_right = -13.0
+offset_bottom = 12.5
+texture = ExtResource("5_sx3cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act" type="Control" parent="OpenedDiary"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActName" type="Label" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -283.0
+offset_top = -142.0
+offset_right = -154.0
+offset_bottom = -97.0
+text = "Имя акта"
+label_settings = ExtResource("3_con2f")
+
+[node name="ActDesc" type="Label" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -99.0
+offset_right = -22.0
+offset_bottom = 79.0
+text = "Описание акта"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="PlayButton" type="Button" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = 110.0
+offset_right = -176.0
+offset_bottom = 142.0
+grow_vertical = 0
+theme = ExtResource("5_4ytvr")
+text = "Играть"
+alignment = 0
+
+[node name="Settings" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsLabel" type="Label" parent="OpenedDiary/Settings"]
+layout_mode = 0
+offset_left = -224.0
+offset_top = -162.0
+offset_right = -99.0
+offset_bottom = -117.0
+text = "Настройки"
+label_settings = ExtResource("3_con2f")
+
+[node name="Sound" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="SoundVolume" type="Label" parent="OpenedDiary/Settings/Sound"]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -120.0
+offset_right = -140.0
+offset_bottom = -90.0
+text = "1. Громкость музыки"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="SoundVolumeSlider" type="HSlider" parent="OpenedDiary/Settings/Sound"]
+layout_mode = 0
+offset_left = -280.0
+offset_top = -86.0
+offset_right = -133.0
+offset_bottom = -62.0
+theme = ExtResource("8_i6lef")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXVolume" type="Label" parent="OpenedDiary/Settings/Sound"]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -61.0
+offset_right = -140.0
+offset_bottom = -31.0
+text = "2. SFX"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="SFXVolumeSlider" type="HSlider" parent="OpenedDiary/Settings/Sound"]
+layout_mode = 0
+offset_left = -280.0
+offset_top = -33.0
+offset_right = -133.0
+offset_bottom = -9.0
+theme = ExtResource("8_i6lef")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SaveDataManage" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="Saves" type="Label" parent="OpenedDiary/Settings/SaveDataManage"]
+layout_mode = 0
+offset_left = -290.0
+offset_top = -7.0
+offset_right = -192.0
+offset_bottom = 22.0
+text = "3. Сохранения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="WipeAll" type="Button" parent="OpenedDiary/Settings/SaveDataManage"]
+layout_mode = 0
+offset_left = -275.0
+offset_top = 25.0
+offset_right = -192.0
+offset_bottom = 47.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Удалить всё"
+alignment = 0
+
+[node name="Language" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="Languages" type="Label" parent="OpenedDiary/Settings/Language"]
+layout_mode = 0
+offset_left = -290.0
+offset_top = 49.0
+offset_right = -192.0
+offset_bottom = 78.0
+text = "4. Язык"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="Russian" type="Button" parent="OpenedDiary/Settings/Language"]
+layout_mode = 0
+offset_left = -280.0
+offset_top = 81.0
+offset_right = -224.0
+offset_bottom = 103.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Русский"
+
+[node name="English" type="Button" parent="OpenedDiary/Settings/Language"]
+layout_mode = 0
+offset_left = -221.0
+offset_top = 81.0
+offset_right = -165.0
+offset_bottom = 103.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "English"
+
+[node name="Belorussian" type="Button" parent="OpenedDiary/Settings/Language"]
+layout_mode = 0
+offset_left = -160.0
+offset_top = 81.0
+offset_right = -104.0
+offset_bottom = 103.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Беларускі"
+
+[node name="Hints" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="Hints" type="Label" parent="OpenedDiary/Settings/Hints"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -151.0
+offset_right = 114.0
+offset_bottom = -122.0
+text = "5. Подсказки"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="HintsText" type="Label" parent="OpenedDiary/Settings/Hints"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -122.0
+offset_right = 144.0
+offset_bottom = -99.0
+text = "Включить подсказки"
+label_settings = SubResource("LabelSettings_4qslq")
+
+[node name="Recomended" type="Label" parent="OpenedDiary/Settings/Hints"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = -122.0
+offset_right = 249.0
+offset_bottom = -99.0
+text = "рекомендуется"
+label_settings = SubResource("LabelSettings_4qslq")
+
+[node name="HintsCheckBox" type="CheckBox" parent="OpenedDiary/Settings/Hints"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = -117.0
+offset_right = 173.0
+offset_bottom = -93.0
+scale = Vector2(0.640005, 0.640005)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rc150")
+button_pressed = true
+
+[node name="CloudSave" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="CloudSave" type="Label" parent="OpenedDiary/Settings/CloudSave"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -101.0
+offset_right = 114.0
+offset_bottom = -72.0
+text = "6. Сохранения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="OpenSaves" type="Button" parent="OpenedDiary/Settings/CloudSave"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -72.0
+offset_right = 126.0
+offset_bottom = -50.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Список сохранений"
+alignment = 0
+
+[node name="SaveName" type="LineEdit" parent="OpenedDiary/Settings/CloudSave"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -47.0
+offset_right = 260.0
+offset_bottom = -16.0
+scale = Vector2(0.639999, 0.639999)
+placeholder_text = "Название"
+
+[node name="Save" type="Button" parent="OpenedDiary/Settings/CloudSave"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = -25.0
+offset_right = 126.0
+offset_bottom = -3.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Сохранить"
+alignment = 0
+
+[node name="Achievements" type="Control" parent="OpenedDiary/Settings"]
+anchors_preset = 0
+
+[node name="Achievements" type="Label" parent="OpenedDiary/Settings/Achievements"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -7.0
+offset_right = 114.0
+offset_bottom = 22.0
+text = "7. Достижения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="OpenAchievements" type="Button" parent="OpenedDiary/Settings/Achievements"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 22.0
+offset_right = 126.0
+offset_bottom = 44.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Список достижений"
+alignment = 0
+
+[node name="SavesList" type="Control" parent="OpenedDiary"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 43.0
+offset_right = -63.0
+offset_bottom = 338.0
+grow_horizontal = 0
+
+[node name="SavesText" type="Label" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Сохранения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OpenedDiary/SavesList/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OpenedDiary/SavesList/MarginContainer/ScrollContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="WipeActSaves" type="TextureRect" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 32.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_n3vyp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WhiteScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 84.0
+offset_bottom = 45.0
+theme = ExtResource("5_4ytvr")
+text = "Выйти"
+alignment = 0
+
+[node name="TelegramButton" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -58.0
+offset_top = 14.0
+offset_right = -18.0
+offset_bottom = 54.0
+grow_horizontal = 0
+texture = ExtResource("12_hmqno")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextFieldForMobile" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(425, 125)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -212.0
+offset_top = 14.0
+offset_right = 213.0
+offset_bottom = 139.0
+grow_horizontal = 2
+texture = ExtResource("13_ye8it")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextInputed" type="Label" parent="TextFieldForMobile"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -169.5
+offset_top = -24.5
+offset_right = 163.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = ExtResource("3_con2f")
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ye8it")
+autoplay = true
+
+[node name="PlayGamesSnapshotsClient" type="Node" parent="."]
+script = ExtResource("14_4qslq")
+metadata/_custom_type_script = "uid://cinc8mj62kgsh"
+
+[node name="PlayGamesAchievementsClient" type="Node" parent="."]
+script = ExtResource("15_n3vyp")
+metadata/_custom_type_script = "uid://cwhxq5q4fmq1w"
+
+[connection signal="gui_input" from="ClosedDiary" to="." method="_on_closed_diary_gui_input"]
+[connection signal="gui_input" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_gui_input" binds= [1]]
+[connection signal="mouse_entered" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_mouse_exited" binds= [0]]
+[connection signal="gui_input" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_gui_input" binds= [-1]]
+[connection signal="mouse_entered" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_mouse_exited" binds= [1]]
+[connection signal="gui_input" from="OpenedDiary/Back" to="." method="_on_back_gui_input"]
+[connection signal="gui_input" from="OpenedDiary/Forward" to="." method="_on_forward_gui_input"]
+[connection signal="pressed" from="OpenedDiary/Act/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="value_changed" from="OpenedDiary/Settings/Sound/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="value_changed" from="OpenedDiary/Settings/Sound/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="OpenedDiary/Settings/SaveDataManage/WipeAll" to="." method="_on_wipe_all_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/Language/Russian" to="." method="_on_russian_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/Language/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/Language/Belorussian" to="." method="_on_belorussian_pressed"]
+[connection signal="toggled" from="OpenedDiary/Settings/Hints/HintsCheckBox" to="." method="_on_hints_check_box_toggled"]
+[connection signal="pressed" from="OpenedDiary/Settings/CloudSave/OpenSaves" to="." method="_on_open_saves_pressed"]
+[connection signal="text_changed" from="OpenedDiary/Settings/CloudSave/SaveName" to="." method="_on_save_name_text_changed"]
+[connection signal="pressed" from="OpenedDiary/Settings/CloudSave/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/Achievements/OpenAchievements" to="." method="_on_open_achievements_pressed"]
+[connection signal="gui_input" from="OpenedDiary/SavesList/WipeActSaves" to="." method="_on_wipe_act_saves_gui_input"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="gui_input" from="TelegramButton" to="." method="_on_telegram_button_gui_input"]
+[connection signal="game_loaded" from="PlayGamesSnapshotsClient" to="." method="_on_play_games_snapshots_client_game_loaded"]
+[connection signal="game_saved" from="PlayGamesSnapshotsClient" to="." method="_on_play_games_snapshots_client_game_saved"]

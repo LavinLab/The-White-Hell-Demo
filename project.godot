@@ -1,0 +1,68 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="The White Hell"
+config/description="The White Hell by LavinLab"
+config/version="0.1.6"
+run/main_scene="uid://bqplqy3jgx4h7"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="/LavinLab/TWH"
+config/features=PackedStringArray("4.5", "Mobile")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="uid://duns6tdfli7ci"
+
+[autoload]
+
+SaveSystem="*res://assets/scripts/save_system.gd"
+DialogSystem="*res://assets/scripts/dialog_system.gd"
+Globals="*res://assets/scripts/globals.gd"
+LangParser="*res://assets/scripts/lang_parser.gd"
+GodotPlayGameServices="*res://addons/GodotPlayGameServices/scripts/autoloads/godot_play_game_services.gd"
+
+[debug]
+
+file_logging/enable_file_logging.pc=false
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/size/mode=3
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://csv1axrs5p7x8"
+mouse_cursor/custom_image_hotspot=Vector2(0, 64)
+
+[editor]
+
+movie_writer/movie_file="D:/CompiledApps/TWH/GodotShowreelSubmission/main_video_two.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GodotPlayGameServices/plugin.cfg", "res://addons/InappReviewPlugin/plugin.cfg")
+
+[input]
+
+click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(291, 14),"global_position":Vector2(300, 62),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
+
+[rendering]
+
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)

@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b6c0c1isi8ieu"]
+
+[ext_resource type="FontFile" uid="uid://b2b136vfs8wsq" path="res://assets/fonts/Nunito-Bold.ttf" id="1_8brfd"]
+
+[resource]
+font = ExtResource("1_8brfd")
+font_size = 13
+font_color = Color(0.0475577, 0.0475576, 0.0475576, 1)

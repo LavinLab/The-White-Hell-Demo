@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://cydus6lp5roal"]
+
+[ext_resource type="Script" uid="uid://cn0hcorobou2j" path="res://scenes/menu_and_splash/splash.gd" id="1_10vqf"]
+[ext_resource type="Texture2D" uid="uid://d0oyspj0kgv86" path="res://assets/textures/ui/llsplash.png" id="1_86pdq"]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_10vqf")
+
+[node name="SplashImage" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_86pdq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

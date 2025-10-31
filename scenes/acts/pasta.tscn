@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk436442pkr35"]
+
+[ext_resource type="Texture2D" uid="uid://by3niqkhr5cxh" path="res://assets/textures/shop/food.png" id="1_y44b8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdt57"]
+atlas = ExtResource("1_y44b8")
+region = Rect2(589, 12, 296, 506)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_20ijk"]
+radius = 142.599
+height = 509.898
+
+[node name="Pasta" type="Sprite2D"]
+scale = Vector2(0.231419, 0.231419)
+texture = SubResource("AtlasTexture_jdt57")
+metadata/tag = "pasta"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_20ijk")

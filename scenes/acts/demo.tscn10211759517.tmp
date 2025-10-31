@@ -1,0 +1,575 @@
+[gd_scene load_steps=57 format=3 uid="uid://0lm4ls32x836"]
+
+[ext_resource type="Script" uid="uid://eep8ylehjamx" path="res://scenes/acts/demo.gd" id="1_vephn"]
+[ext_resource type="PackedScene" uid="uid://d27gpmuk10jrt" path="res://scenes/ui_in_game/ui.tscn" id="2_b0nem"]
+[ext_resource type="Texture2D" uid="uid://lb0sh5kuy5xm" path="res://assets/textures/gopnik_death/gopnik_dead2.png" id="3_el42s"]
+[ext_resource type="Script" uid="uid://bn7b60d2qvs5i" path="res://scenes/gameplay/knock_pause.gd" id="3_x0xbu"]
+[ext_resource type="Texture2D" uid="uid://osveoeqcnw6e" path="res://assets/textures/job/closed_door.png" id="4_7qr1p"]
+[ext_resource type="Texture2D" uid="uid://fd4oonnlugrr" path="res://assets/textures/gopnik_death/gopnik_dead3.png" id="4_6880b"]
+[ext_resource type="Texture2D" uid="uid://dlfjgc3pud2aq" path="res://assets/textures/gopnik_death/gopnik_dead4.png" id="5_gd1nj"]
+[ext_resource type="Texture2D" uid="uid://cnglog1pl045n" path="res://assets/textures/job/opened_door.png" id="5_w0m4w"]
+[ext_resource type="Script" uid="uid://8r06bbyceueg" path="res://scenes/gameplay/went_away_pause.gd" id="6_1tncc"]
+[ext_resource type="Texture2D" uid="uid://ddu17gej1wacm" path="res://assets/textures/gopnik_death/gopnik_dead5.png" id="6_g605g"]
+[ext_resource type="Texture2D" uid="uid://bdbh4j741alw2" path="res://assets/textures/job/exit_from_job1.png" id="7_fvxj6"]
+[ext_resource type="Texture2D" uid="uid://c151y8xhe1qel" path="res://assets/textures/gopnik_death/gopnik_dead6.png" id="7_x0p4b"]
+[ext_resource type="Script" uid="uid://bnx34v7nlfhfj" path="res://scenes/gameplay/gopnik_in_gate_way.gd" id="8_7g0r2"]
+[ext_resource type="Texture2D" uid="uid://ccy68d1udg7e3" path="res://assets/textures/gopnik_death/gopnik_dead7.png" id="8_535rn"]
+[ext_resource type="Texture2D" uid="uid://cpep7bn8yv8ea" path="res://assets/textures/gopnik_death/gateway.jpg" id="8_c5udw"]
+[ext_resource type="Texture2D" uid="uid://b6wnto5xp8lnx" path="res://assets/textures/ui/walking_anim/wa2.jpg" id="10_5nout"]
+[ext_resource type="Texture2D" uid="uid://cndlhps4gxj2l" path="res://assets/textures/gopnik_death/gopnik.png" id="10_w6tym"]
+[ext_resource type="Texture2D" uid="uid://cxgyj46qvexmr" path="res://assets/textures/gopnik_death/knife_in_hand.png" id="11_1vfpc"]
+[ext_resource type="Texture2D" uid="uid://cp8ovxa1aqnp1" path="res://assets/textures/ui/walking_anim/wa3.jpg" id="11_415vv"]
+[ext_resource type="Texture2D" uid="uid://bb4nghqr4jmj3" path="res://assets/textures/gopnik_death/gopnik_dead1.png" id="12_5i6g1"]
+[ext_resource type="Texture2D" uid="uid://bpse0h5npohjl" path="res://assets/textures/ui/walking_anim/wa4.jpg" id="12_b701w"]
+[ext_resource type="Texture2D" uid="uid://cqil7y0i1k1d8" path="res://assets/textures/ui/walking_anim/wa5.jpg" id="13_dil7l"]
+[ext_resource type="Texture2D" uid="uid://dkj5ax31wqxqr" path="res://assets/textures/ui/walking_anim/wa6.jpg" id="14_b3r08"]
+[ext_resource type="Texture2D" uid="uid://lt2qxx35c73j" path="res://assets/textures/ui/walking_anim/wa7.jpg" id="15_aiu8t"]
+[ext_resource type="Texture2D" uid="uid://gyqkywv07wg4" path="res://assets/textures/ui/walking_anim/wa8.jpg" id="16_stlwt"]
+[ext_resource type="Texture2D" uid="uid://l2yjt5t2bxfd" path="res://assets/textures/ui/walking_anim/wa9.jpg" id="17_5bkgd"]
+[ext_resource type="Texture2D" uid="uid://bw0yfm7s2hjpj" path="res://assets/textures/ui/walking_anim/wa10.jpg" id="18_p2mnu"]
+[ext_resource type="Texture2D" uid="uid://dfb2qm23fa6ou" path="res://assets/textures/ui/walking_anim/wa11.jpg" id="19_52ke3"]
+[ext_resource type="Texture2D" uid="uid://bud7xy65pxe5t" path="res://assets/textures/gopnik_death/left_hand_in_blood.png" id="19_gd1nj"]
+[ext_resource type="Texture2D" uid="uid://gcfpg8wcqjdv" path="res://assets/textures/gopnik_death/right_hand_in_blood.png" id="20_g605g"]
+[ext_resource type="Texture2D" uid="uid://bpuxqxck2ymlk" path="res://assets/textures/ui/walking_anim/wa12.jpg" id="20_j0dv0"]
+[ext_resource type="Texture2D" uid="uid://6er3i85yu3y2" path="res://assets/textures/city/homeless.jpg" id="21_g605g"]
+[ext_resource type="Texture2D" uid="uid://7xsjnovkv8ft" path="res://assets/textures/ui/walking_anim/wa13.jpg" id="21_sh5l2"]
+[ext_resource type="Texture2D" uid="uid://6egq54hb73mi" path="res://assets/textures/ui/walking_anim/wa1.jpg" id="22_x0p4b"]
+[ext_resource type="Script" uid="uid://nx6245704bgd" path="res://scenes/gameplay/show_city.gd" id="35_415vv"]
+[ext_resource type="Texture2D" uid="uid://4qirlsuvj3v6" path="res://assets/textures/shop/shop_shell.png" id="36_415vv"]
+[ext_resource type="Script" uid="uid://ctm580hv2dld1" path="res://scenes/gameplay/shop.gd" id="36_stlwt"]
+[ext_resource type="Script" uid="uid://b5dmd2x65gb4r" path="res://scenes/gameplay/product_move_out_shell.gd" id="37_csojs"]
+[ext_resource type="Texture2D" uid="uid://gx67x64kop3x" path="res://assets/textures/shop/shop_bin.png" id="37_dil7l"]
+[ext_resource type="PackedScene" uid="uid://bk436442pkr35" path="res://scenes/acts/pasta.tscn" id="38_52ke3"]
+[ext_resource type="Texture2D" uid="uid://dpal6twrc6fn0" path="res://assets/textures/shop/shop_list.png" id="38_b3r08"]
+[ext_resource type="Script" uid="uid://dxsoxdam3u5gn" path="res://scenes/gameplay/product_move_in_shell.gd" id="39_5bkgd"]
+[ext_resource type="FontFile" uid="uid://b2kdgb2b5tdkl" path="res://assets/fonts/Pacifico-Regular.ttf" id="39_b3r08"]
+[ext_resource type="PackedScene" uid="uid://dxh35yyodlbwv" path="res://scenes/acts/candies.tscn" id="41_eva82"]
+[ext_resource type="PackedScene" uid="uid://vnu2l6yo2541" path="res://scenes/acts/milk.tscn" id="41_j0dv0"]
+[ext_resource type="Script" uid="uid://dus3rm1fussrf" path="res://scenes/gameplay/shop_bin.gd" id="41_p2mnu"]
+[ext_resource type="PackedScene" uid="uid://u7en686h3ftp" path="res://scenes/acts/bread.tscn" id="42_8v6dh"]
+[ext_resource type="PackedScene" uid="uid://845aodh50xwc" path="res://scenes/acts/beer.tscn" id="42_sh5l2"]
+[ext_resource type="PackedScene" uid="uid://d2xmnteugfxwc" path="res://scenes/acts/cheese.tscn" id="45_eva82"]
+[ext_resource type="Script" uid="uid://elkc6ifavd8r" path="res://scenes/gameplay/shop_list.gd" id="49_8v6dh"]
+
+[sub_resource type="Animation" id="Animation_n4xsd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DyingGopnik:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_5i6g1")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../ShowCity/CityBG/Steps:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_x0p4b")]
+}
+
+[sub_resource type="Animation" id="Animation_1vfpc"]
+resource_name = "gopnik_dying"
+length = 0.600007
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DyingGopnik:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("12_5i6g1"), ExtResource("3_el42s"), ExtResource("4_6880b"), ExtResource("5_gd1nj"), ExtResource("6_g605g"), ExtResource("7_x0p4b"), ExtResource("8_535rn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.6]
+}
+
+[sub_resource type="Animation" id="Animation_4inpa"]
+resource_name = "steps"
+length = 0.833337
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../ShowCity/CityBG/Steps:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.12, 0.2, 0.266667, 0.33, 0.4, 0.466667, 0.533333, 0.6, 0.666667, 0.733333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("22_x0p4b"), ExtResource("10_5nout"), ExtResource("11_415vv"), ExtResource("12_b701w"), ExtResource("13_dil7l"), ExtResource("14_b3r08"), ExtResource("15_aiu8t"), ExtResource("16_stlwt"), ExtResource("17_5bkgd"), ExtResource("18_p2mnu"), ExtResource("19_52ke3"), ExtResource("20_j0dv0"), ExtResource("21_sh5l2")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../AnimationPlayer:speed_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../ShowCity")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_city_bg"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5i6g1"]
+_data = {
+&"RESET": SubResource("Animation_n4xsd"),
+&"gopnik_dying": SubResource("Animation_1vfpc"),
+&"steps": SubResource("Animation_4inpa")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_aiu8t"]
+font = ExtResource("39_b3r08")
+font_size = 42
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_eva82"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("39_b3r08")
+
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_vephn")
+
+[node name="UI" parent="." instance=ExtResource("2_b0nem")]
+layer = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Gameplay/GopnikInGateWay/Gateway")
+libraries = {
+&"": SubResource("AnimationLibrary_5i6g1")
+}
+speed_scale = 0.6
+
+[node name="Gameplay" type="CanvasLayer" parent="."]
+
+[node name="KnockPause" type="Control" parent="Gameplay"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_x0xbu")
+
+[node name="ClosedDoor" type="Sprite2D" parent="Gameplay/KnockPause"]
+position = Vector2(-2, -3)
+scale = Vector2(0.176758, 0.176758)
+texture = ExtResource("4_7qr1p")
+metadata/_edit_group_ = true
+
+[node name="TapZone" type="Control" parent="Gameplay/KnockPause/ClosedDoor"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2948.0
+offset_top = -2347.0
+offset_right = -1148.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="OpenedDoor" type="Sprite2D" parent="Gameplay/KnockPause"]
+position = Vector2(-2, -1)
+scale = Vector2(0.17749, 0.17749)
+texture = ExtResource("5_w0m4w")
+
+[node name="WentAwayPause" type="Control" parent="Gameplay"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitJob" type="Sprite2D" parent="Gameplay/WentAwayPause"]
+position = Vector2(-1.00001, 2)
+scale = Vector2(0.502083, 0.502083)
+texture = ExtResource("7_fvxj6")
+script = ExtResource("6_1tncc")
+
+[node name="GopnikInGateWay" type="Control" parent="Gameplay"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_7g0r2")
+
+[node name="Gateway" type="Sprite2D" parent="Gameplay/GopnikInGateWay"]
+position = Vector2(-1.95551, -1.59998)
+scale = Vector2(0.754445, 0.754445)
+texture = ExtResource("8_c5udw")
+
+[node name="Gopnik" type="Sprite2D" parent="Gameplay/GopnikInGateWay/Gateway"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-34.8994, 72.4831)
+scale = Vector2(0.435527, 0.435527)
+texture = ExtResource("10_w6tym")
+
+[node name="KnifeInHand" type="Sprite2D" parent="Gameplay/GopnikInGateWay/Gateway"]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-166.443, 100.671)
+scale = Vector2(0.492636, 0.492636)
+texture = ExtResource("11_1vfpc")
+
+[node name="DyingGopnik" type="Sprite2D" parent="Gameplay/GopnikInGateWay/Gateway"]
+visible = false
+position = Vector2(-19.0754, 129.213)
+scale = Vector2(0.568413, 0.568413)
+texture = ExtResource("12_5i6g1")
+
+[node name="Hands" type="Node2D" parent="Gameplay/GopnikInGateWay/Gateway"]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.986204, 0.986204)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="LeftHandInBlood" type="Sprite2D" parent="Gameplay/GopnikInGateWay/Gateway/Hands"]
+position = Vector2(-349.792, 198.715)
+scale = Vector2(0.311909, 0.311909)
+texture = ExtResource("19_gd1nj")
+
+[node name="RightHandInBlood" type="Sprite2D" parent="Gameplay/GopnikInGateWay/Gateway/Hands"]
+position = Vector2(413.762, 231.38)
+scale = Vector2(0.249212, 0.249212)
+texture = ExtResource("20_g605g")
+
+[node name="BeforeKillTimer" type="Timer" parent="Gameplay/GopnikInGateWay"]
+one_shot = true
+
+[node name="ShowCity" type="Control" parent="Gameplay"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("35_415vv")
+
+[node name="CityBG" type="Sprite2D" parent="Gameplay/ShowCity"]
+position = Vector2(-0.222209, -0.874997)
+scale = Vector2(0.755903, 0.755903)
+texture = ExtResource("21_g605g")
+
+[node name="Steps" type="Sprite2D" parent="Gameplay/ShowCity/CityBG"]
+position = Vector2(-228, -187)
+rotation = -0.344667
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("22_x0p4b")
+
+[node name="Shop" type="Control" parent="Gameplay"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("36_stlwt")
+
+[node name="Pasta" type="Node2D" parent="Gameplay/Shop"]
+script = ExtResource("37_csojs")
+
+[node name="Pasta8" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-152, -155)
+
+[node name="Pasta9" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-222, -152)
+
+[node name="Pasta10" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-285, -154)
+
+[node name="Pasta11" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-364, -151)
+
+[node name="Pasta12" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-441, -152)
+
+[node name="Pasta13" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-328, -151)
+
+[node name="Pasta14" parent="Gameplay/Shop/Pasta" instance=ExtResource("38_52ke3")]
+position = Vector2(-489, -156)
+
+[node name="ShopShell" type="Sprite2D" parent="Gameplay/Shop"]
+position = Vector2(-313, 13)
+texture = ExtResource("36_415vv")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Candies" type="Node2D" parent="Gameplay/Shop/ShopShell"]
+script = ExtResource("39_5bkgd")
+
+[node name="Candies8" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(11, -21)
+rotation = 0.0945799
+
+[node name="Candies7" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(89, -20)
+scale = Vector2(0.210894, 0.249302)
+
+[node name="Candies6" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(161, -19)
+
+[node name="Candies9" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(-86, -13)
+
+[node name="Candies10" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(-44, -13)
+
+[node name="Candies11" parent="Gameplay/Shop/ShopShell/Candies" instance=ExtResource("41_eva82")]
+position = Vector2(-178, -10)
+
+[node name="Bread" type="Node2D" parent="Gameplay/Shop/ShopShell"]
+script = ExtResource("39_5bkgd")
+
+[node name="Bread9" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(-101, 188)
+
+[node name="Bread10" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(-17, 191)
+
+[node name="Bread12" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(54, 172)
+rotation = 0.945693
+
+[node name="Bread11" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(-71, 136)
+rotation = 0.278018
+
+[node name="Bread6" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(-175, 186)
+
+[node name="Bread8" parent="Gameplay/Shop/ShopShell/Bread" instance=ExtResource("42_8v6dh")]
+position = Vector2(-175, 130)
+
+[node name="Milk" type="Node2D" parent="Gameplay/Shop"]
+position = Vector2(261, 15)
+script = ExtResource("37_csojs")
+
+[node name="Milk9" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(-181, -187)
+
+[node name="Milk10" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(-120, -186)
+
+[node name="Milk11" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(-53.638, -186.088)
+
+[node name="Milk12" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(11.362, -188.088)
+
+[node name="Milk14" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(76, -188)
+
+[node name="Milk15" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(138, -190)
+
+[node name="Milk16" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(129, -181)
+rotation = 0.850776
+
+[node name="Milk13" parent="Gameplay/Shop/Milk" instance=ExtResource("41_j0dv0")]
+position = Vector2(-51.638, -195.088)
+rotation = 0.230169
+
+[node name="ShopShell2" type="Sprite2D" parent="Gameplay/Shop"]
+position = Vector2(261, 15)
+texture = ExtResource("36_415vv")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Beer" type="Node2D" parent="Gameplay/Shop/ShopShell2"]
+position = Vector2(-574, -2)
+script = ExtResource("39_5bkgd")
+
+[node name="Beer10" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(386, -21)
+
+[node name="Beer11" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(433, -20)
+
+[node name="Beer15" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(478, -21)
+
+[node name="Beer12" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(536.087, -24.6287)
+
+[node name="Beer16" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(582, -25)
+
+[node name="Beer17" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(629, -25)
+
+[node name="Beer18" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(679, -25)
+
+[node name="Beer19" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(724, -27)
+
+[node name="Beer20" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(772, -27)
+
+[node name="Beer13" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(519.087, -24.6287)
+rotation = -0.3844
+
+[node name="Beer14" parent="Gameplay/Shop/ShopShell2/Beer" instance=ExtResource("42_sh5l2")]
+position = Vector2(432, 27)
+rotation = 1.51527
+
+[node name="Cheese" type="Node2D" parent="Gameplay/Shop/ShopShell2"]
+script = ExtResource("39_5bkgd")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Cheese8" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(167, 139)
+
+[node name="Cheese9" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(100, 140)
+
+[node name="Cheese10" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(12, 143)
+
+[node name="Cheese12" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(-106, 144)
+
+[node name="Cheese13" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(-179, 144)
+
+[node name="Cheese11" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(-35, 144)
+
+[node name="Cheese14" parent="Gameplay/Shop/ShopShell2/Cheese" instance=ExtResource("45_eva82")]
+position = Vector2(-70, 165)
+rotation = 1.57951
+
+[node name="ShopBin" type="Sprite2D" parent="Gameplay/Shop"]
+position = Vector2(-58, -19)
+scale = Vector2(0.635185, 0.635185)
+texture = ExtResource("37_dil7l")
+script = ExtResource("41_p2mnu")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="Gameplay/Shop/ShopBin"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Gameplay/Shop/ShopBin/Area2D"]
+polygon = PackedVector2Array(-250.321, 278.659, 333.761, 278.659, 573.061, 379.417, 552.595, 535.277, -585.656, 541.574, -588.805, 440.816)
+
+[node name="ShopList" type="Sprite2D" parent="Gameplay/Shop"]
+position = Vector2(404, 250)
+scale = Vector2(0.245803, 0.245803)
+texture = ExtResource("38_b3r08")
+script = ExtResource("49_8v6dh")
+metadata/_edit_group_ = true
+
+[node name="ShopListText" type="Label" parent="Gameplay/Shop/ShopList"]
+anchors_preset = -1
+anchor_left = 0.261
+anchor_top = 0.12
+anchor_right = 0.729
+anchor_bottom = 0.217
+offset_left = -337.047
+offset_top = -415.104
+offset_right = -337.359
+offset_bottom = -412.563
+text = "Купить"
+label_settings = SubResource("LabelSettings_aiu8t")
+
+[node name="ShopText" type="RichTextLabel" parent="Gameplay/Shop/ShopList"]
+offset_left = -195.278
+offset_top = -235.961
+offset_right = 154.722
+offset_bottom = 25.0386
+theme = SubResource("Theme_eva82")
+bbcode_enabled = true
+text = "Пиво x3
+Хлеб
+Конфеты x2"
+
+[node name="HintTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[connection signal="on_hint_clicked" from="UI" to="Gameplay/KnockPause" method="_on_ui_on_hint_clicked"]
+[connection signal="on_hint_clicked" from="UI" to="Gameplay/WentAwayPause/ExitJob" method="_on_ui_on_hint_clicked"]
+[connection signal="on_hint_clicked" from="UI" to="Gameplay/ShowCity" method="_on_ui_on_hint_clicked"]
+[connection signal="visibility_changed" from="Gameplay/KnockPause" to="Gameplay/KnockPause" method="_on_visibility_changed"]
+[connection signal="gui_input" from="Gameplay/KnockPause/ClosedDoor/TapZone" to="Gameplay/KnockPause" method="_on_tap_zone_gui_input"]
+[connection signal="visibility_changed" from="Gameplay/WentAwayPause" to="Gameplay/WentAwayPause/ExitJob" method="_on_went_away_pause_visibility_changed"]
+[connection signal="timeout" from="Gameplay/GopnikInGateWay/BeforeKillTimer" to="Gameplay/GopnikInGateWay" method="_on_before_kill_timer_timeout"]
+[connection signal="visibility_changed" from="Gameplay/ShowCity" to="Gameplay/ShowCity" method="_on_visibility_changed"]
+[connection signal="area_entered" from="Gameplay/Shop/ShopBin/Area2D" to="Gameplay/Shop/ShopBin" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Gameplay/Shop/ShopBin/Area2D" to="Gameplay/Shop/ShopBin" method="_on_area_2d_area_exited"]
+[connection signal="timeout" from="HintTimer" to="Gameplay/KnockPause" method="_on_hint_timer_timeout"]
+[connection signal="timeout" from="HintTimer" to="Gameplay/WentAwayPause/ExitJob" method="_on_hint_timer_timeout"]
+[connection signal="timeout" from="HintTimer" to="Gameplay/ShowCity" method="_on_hint_timer_timeout"]

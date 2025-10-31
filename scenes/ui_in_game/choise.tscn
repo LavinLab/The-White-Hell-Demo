@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bui7g03h846i6"]
+
+[ext_resource type="Texture2D" uid="uid://bfj0v83wvvyl2" path="res://assets/textures/ui/choise.png" id="1_um3ll"]
+[ext_resource type="LabelSettings" uid="uid://claqtcf06f17u" path="res://assets/themes/choice_label.tres" id="2_um3ll"]
+
+[node name="Choise" type="TextureRect"]
+custom_minimum_size = Vector2(250, 80)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("1_um3ll")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ChoiseText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -15.0
+offset_right = 103.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1. Первый выбор"
+label_settings = ExtResource("2_um3ll")
+horizontal_alignment = 1
+vertical_alignment = 1

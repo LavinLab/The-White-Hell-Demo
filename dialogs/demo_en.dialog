@@ -1,0 +1,378 @@
+[start]
+checkpoint demo_start
+play(res://assets/audio/music/tchaikovsky_andante_sentimentale.ogg)
+show date(April 21, 1999)
+pause factory
+...: Sometimes in the daily hustle, you don't notice how the smallest details affect your life.
+...: The factory - a place that, despite its grimness, had an incredible influence on my fate.
+...: It all started right here on April 21, 1999...
+...: Oh yes, it all started with that evening shift...
+checkpoint demo_factory
+pause factory_gameplay
+achievement CgkIip_apLcbEAIQEw
+???: Can I bother you for a moment?
+pause oleg
+...: Hello, Oleg! Long time no see.
+Oleg: So how are you? How's work?
+...: Just finished packing cartridges. It's strange they make us do this job, not machines like before.
+Oleg: Yeah, management's demands are getting more and more peculiar. Probably cutting the factory's budget to laughable sizes.
+...: Everyone's pay is worthless, so the budget was probably really cut, soon they'll start making cartridges out of paper...
+...: You seem gloomy. Is everything alright?
+Oleg: Can't you see for yourself? Look around. Every day someone from our crew gets fired, soon the workshop will be completely empty. Sidorov last week, Vitalik this week.
+Oleg: What's there to say, even Andrey got kicked out, even though he worked in the service vehicle workshop.
+...: Really? So it's total layoffs.
+Oleg: Exactly.
+...: Harsh reality... But don't despair, not all is lost, at least we're still holding on, earning our food, not turning to crime like some...
+Oleg: Yeah, if only it were that rosy.
+...: What do you mean? What are you talking about?
+Oleg: About the fact that we're not holding on anymore.
+-> ... (i_was_fired_one)
+-> I damn well don't understand! (i_was_fired_two)
+
+[i_was_fired_one]
+said_nothing_demo += 1
+Oleg: ...... (i_was_fired)
+
+[i_was_fired]
+Oleg: I got fired...
+-> I don't believe it! (cant_believe)
+-> And they were right to do so! (it_was_right)
+
+[i_was_fired_two]
+...: Listen, Oleg. I understand you're tired. But can you speak clearly? I can't understand a thing. Seriously. (i_was_fired)
+
+[cant_believe]
+...: What? I can't believe it! Okay, they fired our guys. But I don't believe they decided to fire you too, you always worked overtime.
+Oleg: Not everything in this world lasts forever.
+...: But why? I've known you since early childhood. Even when we met here, you always did your job honestly and conscientiously. And you know mechanics very well, no worse than me. Why would they suddenly fire you?
+Oleg: Guess I became inconvenient for them. And besides, we knew this day would come sooner or later.
+...: But I didn't think it would be so soon...
+Oleg: I still can't believe it, and there's nowhere else to go... No one's hiring new employees these days...
+...: Just don't get upset. Life isn't over.
+Oleg: Might as well be over...
+...: Come on! Let's hope for something good.
+Oleg: Yeah, but unfortunately, I have bad news...
+...: ... (boss_is_waiting)
+
+[boss_is_waiting]
+Oleg: The boss asked me to call you "for a talk."
+-> Probably a raise (maybe_raise)
+-> I have a guess (i_guess)
+
+[it_was_right]
+...: Well, what can I say. You have to pay for poor work.
+Oleg: Don't say that.
+...: What did you want to hear from me? Thought I'd pat you on the head?
+Oleg: Maybe not all is lost. Maybe they made a mistake.
+...: No. You just needed to do your job. Not count on leniency.
+Oleg: Okay, whatever you say. (boss_is_waiting)
+
+[maybe_raise]
+Oleg: If only... Actually, I thought about not spoiling your mood, he would have sent someone else for you, but I decided I'd set you up, sorry... (to_work)
+
+[i_guess]
+Oleg: Actually, I thought about not spoiling your mood, he would have sent someone else for you, but I decided I'd set you up, sorry... (to_work)
+
+[to_work]
+...: It's okay, I understand.
+Oleg: Good luck.
+...: You too, Oleg. I hope our paths cross again. And we'll meet again. Bye...
+hide
+show bg(res://assets/textures/job/closed_door.png, noanim)
+...: And here I am again, in this place of lost hopes and disappointments.
+...: I've come again and again hope to hear something good.
+...: "Maybe I should just leave..."
+-> Leave
+-> Enter (to_boss)
+...: To hell with it, I'm tired, I don't even want to listen...
+...: I'm going home, screw it.
+achievement CgkIip_apLcbEAIQCA
+
+[to_boss]
+pause knock
+show bg(res://assets/textures/job/cabinet.png, noanim)
+Boss: Well, let's get down to business. I called you here, as you understand, not for nothing.
+Boss: I hope you understand even without me that times are tough.
+Boss: I know you've always done your job conscientiously.
+Boss: You've become something more to me than just an ordinary worker.
+-> ... (final_repl)
+-> Get to the point. (fired, 7s)
+
+[final_repl]
+said_nothing_demo += 1
+# Think about an additional boss response
+Boss: You're almost like a son to me. That's why it pains me to say this.
+Boss: And I don't want you to take it too hard.
+Boss: I know I talk a lot of nonsense. But I have to say it. (fired)
+
+[fired]
+checkpoint demo_dismissal
+Boss: In short, you're fired...
+-> I don't even know what to say
+-> Leave (get_out)
+Boss: I understand how you feel. But right now we can't cover all the expenses.
+Boss: So these are forced measures. I hope you have a bright future. Good luck!
+achievement CgkIip_apLcbEAIQCw
+change went_away
+
+[get_out]
+said_nothing_demo += 1
+achievement CgkIip_apLcbEAIQDA
+change went_away
+
+[went_away]
+pause go_out
+show bg(res://assets/textures/job/road_after_job.png, noanim)
+...: I didn't know where to go, I didn't know what to do...
+play(res://assets/audio/music/debussy_the_snow_is_dancing.ogg)
+checkpoint demo_show_city
+pause show_city
+show bg(res://assets/textures/shop/shop_entrance.jpg, noanim)
+...: I walked around in a daze, forgetting everything, going wherever my eyes led me. (shop)
+
+#checkpoint demo_gopnik
+#pause gop_stop
+#Thug: Hey, gloomy bastard, got a smoke?
+#...: I don't have any, let me pass.
+#Thug: Why so cocky, long time since your teeth got wet? (Russian idiom for drinking)
+#-> Run away
+#-> Stab him (murdered_gopnik)
+#hide
+
+[murdered_gopnik]
+pause murder
+...: Damn, what was that, God, what have I done, I wasn't myself, damn, damn, damn, I gotta get out of here.
+hide
+checkpoint demo_show_city
+pause show_city
+show bg(res://assets/textures/shop/shop_entrance.jpg)
+...: I walked around in a daze, forgetting everything, going wherever my eyes led me. (shop)
+
+[shop]
+play(res://assets/audio/music/archetype_anno_domini_beats.ogg)
+checkpoint demo_shop
+pause shop
+
+[shop_took_needed]
+show bg(res://assets/textures/shop/shop_register.jpg, noanim)
+Shop Assistant Galina: Need a bag?
+-> No (eco_achievement)
+-> Yes (bag_achievement)
+
+[eco_achievement]
+# add an achievement parsing
+achievement CgkIip_apLcbEAIQAw
+change shop_dialog
+
+[bag_achievement]
+achievement CgkIip_apLcbEAIQAg
+change shop_dialog
+
+[shop_dialog]
+...: Hello, Aunt Galina. How's work? Sales going well?
+Shop Assistant Galina: Hello, not so great lately. Feels like sales are less every day. People come in less often, wages are falling, prices are rising, where does it end? But we manage.
+Shop Assistant Galina: How are things with you?
+...: They fired me, damn it, fired me, saying times are tough. I was barely making ends meet for years as it was.
+...: And no one will tell me what to do, I have almost no relatives left, and those that are left are in such a sorry state themselves that they don't care about me.
+Shop Assistant Galina: You should rest, it'll all work out. *whisper* You know what, just take these groceries and go.
+...: *whisper* Thank you so much! I have almost no money. I don't even know how to thank you!
+Shop Assistant Galina: *whisper* Don't mention it! Take it.
+Shop Assistant Galina: Thank you for your purchase! Have a nice evening! Come again! (house)
+
+[first_code]
+???: Leave me alone! I don't need anything from your ads, no massagers, washing machines, lipsticks, or any of your nonsense! Just leave me alone, you damn advertisers. Just fooling people...
+achievement CgkIip_apLcbEAIQCg
+change hang_up
+
+[second_code]
+Intercom: Shhhhhhhhhhhhhhhh
+Intercom: *beep* *beep* *beep*
+...: Looks like no one's home...
+achievement CgkIip_apLcbEAIQEg
+pause entrance_return
+
+[third_code]
+???: Who is it? Seryozha?! Is that you? Didn't you leave for your whore? Damn cable! (likely a misheard insult)
+-> Listen (third_code_two)
+-> Hang up (hang_up)
+
+[third_code_two]
+said_nothing_demo += 1
+???: Nothing to say?! Of course, you left me and took the most precious thing we had... Our love!
+-> Listen (third_code_three)
+-> Hang up (hang_up)
+
+[third_code_three]
+said_nothing_demo += 1
+???: *crying* Please, go away! I don't want that pain...
+-> Listen (third_code_four)
+-> Hang up (hang_up)
+
+[third_code_four]
+said_nothing_demo += 1
+???: Why? Tell me WHY are you still listening?
+-> Listen (third_code_five)
+-> Hang up (hang_up)
+
+[third_code_five]
+said_nothing_demo += 1
+???: I, I don't even know what to say.
+-> Listen (third_code_six)
+-> Hang up (hang_up)
+
+[third_code_six]
+said_nothing_demo += 1
+???: Guess you have nothing to say either. Damn, you've been standing there so long, maybe we could try to start over? What do you say?
+-> Listen (third_code_seven)
+-> Hang up (hang_up)
+
+[third_code_seven]
+said_nothing_demo += 1
+???: You were never eloquent. Hah, brings back memories of our meeting.
+-> Listen (third_code_eight)
+-> Hang up (hang_up)
+
+[third_code_eight]
+said_nothing_demo += 1
+???: Okay. You convinced me. Come in.
+achievement CgkIip_apLcbEAIQCQ
+Intercom: *beep*
+pause entrance_open
+
+[hang_up]
+Intercom: *beep*
+pause entrance_return
+
+[last_code]
+Intercom: *beep*
+...: Seems right!
+pause entrance_open
+
+[fourth_code]
+???: Ah yes, yes, yes, is that you? Did you bring the drugs?
+-> Listen (fourth_code_two)
+-> Hang up (hang_up)
+
+[fourth_code_two]
+said_nothing_demo += 1
+???: Hey, did you bring it?
+-> Listen (fourth_code_three)
+-> Hang up (hang_up)
+
+[fourth_code_three]
+said_nothing_demo += 1
+???: Hello, you deaf? Did you bring the drugs or not?
+-> Listen (fourth_code_four)
+-> Hang up (hang_up)
+
+[fourth_code_four]
+said_nothing_demo += 1
+???: Hey! Are you even the courier?
+-> Listen (fourth_code_five)
+-> Hang up (hang_up)
+
+[fourth_code_five]
+said_nothing_demo += 1
+???: Damn! Anyway, screw you!
+achievement CgkIip_apLcbEAIQBQ
+change hang_up
+
+[fifth_code]
+Intercom: *do-re-mi-do-re-do*
+achievement CgkIip_apLcbEAIQBA
+change hang_up
+
+[house]
+checkpoint demo_entrance
+pause entrance
+wait 3s
+...: "Mmmmm. Left the damn keys in the door, I guess."
+...: "I wrote down the entry code somewhere."
+pause show_list
+show bg(res://assets/textures/house/entrance.png, noanim)
+...: "Finally, I'm in. I wish I could forget this day like a bad dream."
+checkpoint demo_radio
+pause radio
+wait 1s
+...: "Even though they took my job, no one can take you away, my life-worn radio."
+pause radio_listen
+# Button pressed
+Radio: ...
+...: "Are you kidding me, are you against me today too?!"
+...: "Well, let's see what's wrong with you?"
+pause radio_fix
+# Gameplay disassembly
+# Opened the cover
+wait 1.5s
+...: "Ah, so that's the problem!"
+...: "No worries, we'll fix it quick, you'll be good as new, yeah radio, you're my only friend and comrade."
+pause radio_fixing
+...: "There, that's the stuff. Don't worry, when I have money I'll buy you new parts."
+pause radio_fixed
+# Button pressed
+# View of the apartment
+show bg(res://assets/textures/house/apartment_evening.png, noanim)
+Radio: Everyone is waiting for the new part of the famous video game, teenagers call it GTA, it's an open-world game where the plot unfolds in an American city.
+...: "GTA, some GTA, they should play Tetris, now THAT'S a GAME."
+# Mario music
+play(res://assets/audio/music/super_mario_soundtrack.ogg)
+Radio: *music*
+...: "Such memorable music, makes me want to become a plumber and save the princess."
+play(res://assets/audio/music/archetype_anno_domini_beats.ogg)
+# Add more references
+# Lights go out
+set_theme dark
+show bg(res://assets/textures/house/apartment_night.png, anim)
+...: "What a curse! After getting fired, everything's going downhill!"
+...: "First the radio doesn't work! Now the lights are out! Will they ever let me rest?!"
+...: *sigh* "Probably a blown fuse."
+...: "I'll go check."
+show bg(res://assets/textures/house/corridor_black.png, anim)
+...: "It's so dark in here..."
+...: "Better go carefully. Could break my nose in this gloom..."
+checkpoint demo_neighbour
+show bg(res://assets/textures/house/neighbour_black.png, anim)
+Neighbor Mikhanych: Ooh, heellloo there, young man!
+...: Hello, Mikhanych.
+Neighbor Mikhanych: Listen, kid, help an old man out. On your way, turn on the light in my apartment. Seems like the brats decided to play another joke on the old man.
+...: Why don't you deal with those kids yourself.
+Neighbor Mikhanych: Why should I? My life is lonely enough as it is... And I like it when the kids have fun, it cheers me up. Look, soon I'll start making fun of them too.
+Neighbor Mikhanych: Well, go on, help me, my legs aren't what they used to be.
+set_theme white
+checkpoint demo_electricity
+pause electricity
+
+[helped]
+set_theme white
+show bg(res://assets/textures/house/neighbour_white.png, noanim)
+achievement CgkIip_apLcbEAIQBg
+Neighbor Mikhanych: Ooh. Yeah, that's much better. Thank you, kid. You helped me out.
+...: You're welcome, Mikhanych. If you need anything, let me know.
+Neighbor Mikhanych: Okay. You know, I even thought at first that you only turned on your light. And forgot about the old man.
+...: What do you mean? What are you talking about? After I went to turn on the light, I didn't go anywhere else.
+Neighbor Mikhanych: I just couldn't see in the dark, but I heard someone pass by my door. So I thought it was you wandering around in the dark. Can't find the meter. Ha-ha-ha-ha.
+...: Hmm... Strange.
+Neighbor Mikhanych: Don't worry about it. The main thing is we have light in our apartments now. And not just at the end of the tunnel. Ha-ha-ha-ha.
+...: Okay, have a good evening, Mikhanych. Bye. (writing)
+
+[didnt_help]
+set_theme dark
+show bg(res://assets/textures/house/neighbour_black.png, noanim)
+achievement CgkIip_apLcbEAIQBw
+Neighbor Mikhanych: Wait, you forgot to turn on my light. If you wanted to joke, you succeeded. Ha-ha-ha.
+...: Listen, you old nutcase, I'm tired, I had a rotten day without you. And now you with your request.
+Neighbor Mikhanych: But kid, my legs...
+...: I don't give a damn about your legs. We all live here with equal rights and conditions. And if something happens in your apartment, you solve all the problems. I'm not your nanny!
+Neighbor Mikhanych: But kid...
+...: I'm not your "kid"! We're just neighbors. Good evening. (writing)
+
+[writing]
+set_theme white
+checkpoint demo_writing
+pause writing
+wait 1.2s
+...: "What's this, a note?"
+pause writing_check
+...: "What the..."
+hide
+achievement CgkIip_apLcbEAIQCA

@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://d27gpmuk10jrt"]
+
+[ext_resource type="PackedScene" uid="uid://bmsp304xu5tp4" path="res://scenes/ui_in_game/text_box.tscn" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://3bydqvijhqqn" path="res://scenes/ui_in_game/ui.gd" id="1_yev5y"]
+[ext_resource type="PackedScene" uid="uid://c1gwy1leot52n" path="res://scenes/ui_in_game/choises.tscn" id="2_x4jx1"]
+[ext_resource type="Script" uid="uid://cwhxq5q4fmq1w" path="res://addons/GodotPlayGameServices/scripts/achievements/achievements_client.gd" id="4_5ic10"]
+[ext_resource type="Script" uid="uid://b2166k850gypf" path="res://addons/InappReviewPlugin/InappReview.gd" id="5_ukxrf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xlq6p"]
+font_size = 35
+font_color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_yev5y")
+
+[node name="SolidColor" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 100
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Date" type="Label" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -24.5
+offset_right = 96.5
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Весна 1999"
+label_settings = SubResource("LabelSettings_xlq6p")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextBox" parent="." instance=ExtResource("1_nt7q6")]
+visible = false
+mouse_filter = 0
+
+[node name="Choises" parent="." instance=ExtResource("2_x4jx1")]
+visible = false
+offset_left = -175.0
+offset_top = -125.0
+offset_right = 175.0
+offset_bottom = 125.0
+
+[node name="DateTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="TextTimer" type="Timer" parent="."]
+wait_time = 0.05
+
+[node name="NextReplTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="ChoiceTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PartTimer" type="Timer" parent="."]
+
+[node name="WaitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="PlayGamesAchievementsClient" type="Node" parent="."]
+script = ExtResource("4_5ic10")
+metadata/_custom_type_script = "uid://cwhxq5q4fmq1w"
+
+[node name="InappReview" type="Node" parent="."]
+script = ExtResource("5_ukxrf")
+metadata/_custom_type_script = "uid://b2166k850gypf"
+
+[connection signal="auto_play" from="TextBox" to="." method="_on_text_box_auto_play"]
+[connection signal="gui_input" from="TextBox" to="." method="_on_text_box_gui_input"]
+[connection signal="menu" from="TextBox" to="." method="_on_text_box_menu"]
+[connection signal="timeout" from="DateTimer" to="." method="_on_date_timer_timeout"]
+[connection signal="timeout" from="TextTimer" to="." method="_on_text_timer_timeout"]
+[connection signal="timeout" from="NextReplTimer" to="." method="_on_next_repl_timer_timeout"]
+[connection signal="timeout" from="ChoiceTimer" to="." method="_on_choice_timer_timeout"]
+[connection signal="timeout" from="PartTimer" to="." method="_on_part_timer_timeout"]
+[connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
+[connection signal="review_info_generated" from="InappReview" to="." method="_on_inapp_review_review_info_generated"]

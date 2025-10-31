@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://0lm4ls32x836"]
+
+[ext_resource type="Script" uid="uid://eep8ylehjamx" path="res://scenes/acts/demo.gd" id="1_vephn"]
+[ext_resource type="PackedScene" uid="uid://d27gpmuk10jrt" path="res://scenes/ui_in_game/ui.tscn" id="2_b0nem"]
+[ext_resource type="Script" uid="uid://bn7b60d2qvs5i" path="res://scenes/gameplay/knock_pause.gd" id="3_x0xbu"]
+[ext_resource type="Texture2D" uid="uid://osveoeqcnw6e" path="res://assets/textures/ClosedDoor.png" id="4_7qr1p"]
+[ext_resource type="Texture2D" uid="uid://cnglog1pl045n" path="res://assets/textures/OpenedDoor.png" id="5_w0m4w"]
+
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_vephn")
+
+[node name="Camera" type="Camera2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("2_b0nem")]
+
+[node name="KnockPause" type="Node2D" parent="."]
+script = ExtResource("3_x0xbu")
+
+[node name="ClosedDoor" type="Sprite2D" parent="KnockPause"]
+position = Vector2(473, 260)
+scale = Vector2(0.146647, 0.146647)
+texture = ExtResource("4_7qr1p")
+
+[node name="OpenedDoor" type="Sprite2D" parent="KnockPause"]
+position = Vector2(473, 260)
+scale = Vector2(0.146647, 0.146647)
+texture = ExtResource("5_w0m4w")
+
+[connection signal="visibility_changed" from="KnockPause" to="KnockPause" method="_on_visibility_changed"]

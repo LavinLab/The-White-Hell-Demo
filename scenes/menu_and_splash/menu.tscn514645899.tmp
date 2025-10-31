@@ -1,0 +1,526 @@
+[gd_scene load_steps=15 format=3 uid="uid://dwhcpdwvgdoe0"]
+
+[ext_resource type="Script" uid="uid://cc1ke7cuv66l7" path="res://scenes/menu_and_splash/menu.gd" id="1_v86rl"]
+[ext_resource type="Texture2D" uid="uid://ckxngcacuqlqt" path="res://assets/textures/ui/closed_diary.png" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://c7lsha4lpb6a6" path="res://assets/textures/ui/bookmarks.png" id="2_g3eks"]
+[ext_resource type="Texture2D" uid="uid://c8xr1xvjxc2hs" path="res://assets/textures/ui/opened_diary.png" id="2_vjb58"]
+[ext_resource type="LabelSettings" uid="uid://ddnr1xqg8y5g8" path="res://assets/themes/act_names_label.tres" id="3_con2f"]
+[ext_resource type="LabelSettings" uid="uid://dbjrgevr5gp8i" path="res://assets/themes/desc_label.tres" id="4_mhnvy"]
+[ext_resource type="Theme" uid="uid://cfwrgtuux4phk" path="res://assets/themes/button_theme.tres" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://74ibts52b0s6" path="res://assets/textures/ui/new_next_page_button.jpg" id="5_sx3cw"]
+[ext_resource type="Theme" uid="uid://bx3wnu1s0hrq4" path="res://assets/themes/slider_theme.tres" id="8_i6lef"]
+[ext_resource type="AudioStream" uid="uid://bk07q05a1rsjm" path="res://assets/audio/music/dave_belford_saxo_summer.ogg" id="9_0bkvx"]
+[ext_resource type="Texture2D" uid="uid://dh6gcntevavkf" path="res://assets/textures/ui/new_trash_bin.png" id="10_sx3cw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v86rl"]
+atlas = ExtResource("2_g3eks")
+region = Rect2(409, 1300, 647, 1008)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3eks"]
+atlas = ExtResource("2_g3eks")
+region = Rect2(1371, 1327, 507, 886)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13sgg"]
+atlas = ExtResource("2_g3eks")
+region = Rect2(1234, 276, 530, 853)
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v86rl")
+hover_height = 10
+hover_duration = null
+
+[node name="ClosedDiary" type="TextureRect" parent="."]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+texture = ExtResource("1_yqeox")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Bookmarks" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DemoBookmark" type="TextureRect" parent="Bookmarks"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -198.0
+offset_right = 61.0
+offset_bottom = -131.0
+rotation = -0.139665
+mouse_filter = 0
+texture = SubResource("AtlasTexture_v86rl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="FirstBookmark" type="TextureRect" parent="Bookmarks"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = -205.0
+offset_right = 108.0
+offset_bottom = -138.0
+rotation = 0.074251
+mouse_filter = 0
+texture = SubResource("AtlasTexture_g3eks")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SettingsBookmark" type="TextureRect" parent="Bookmarks"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = -206.0
+offset_right = 152.0
+offset_bottom = -139.0
+rotation = -0.0700722
+mouse_filter = 0
+texture = SubResource("AtlasTexture_13sgg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="OpenedDiary" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(700, 400)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_vjb58")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="WhiteRects" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="OpenedDiary/WhiteRects"]
+layout_mode = 0
+offset_left = -283.0
+offset_top = -100.0
+offset_right = -46.0
+offset_bottom = 81.0
+
+[node name="ColorRect2" type="ColorRect" parent="OpenedDiary/WhiteRects"]
+layout_mode = 0
+offset_left = 51.0
+offset_top = -118.0
+offset_right = 288.0
+offset_bottom = 63.0
+
+[node name="Back" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = -58.0
+offset_right = 137.0
+offset_bottom = -18.0
+grow_vertical = 0
+
+[node name="Arrow" type="TextureRect" parent="OpenedDiary/Back"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -13.0
+offset_right = 38.0
+offset_bottom = 13.0
+texture = ExtResource("5_sx3cw")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="Forward" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -129.0
+offset_top = -59.0
+offset_right = -54.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Arrow" type="TextureRect" parent="OpenedDiary/Forward"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -14.5
+offset_right = -13.0
+offset_bottom = 12.5
+texture = ExtResource("5_sx3cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Act" type="Control" parent="OpenedDiary"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ActName" type="Label" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -283.0
+offset_top = -142.0
+offset_right = -154.0
+offset_bottom = -97.0
+text = "Имя акта"
+label_settings = ExtResource("3_con2f")
+
+[node name="ActDesc" type="Label" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -99.0
+offset_right = -22.0
+offset_bottom = 79.0
+text = "Описание акта"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="PlayButton" type="Button" parent="OpenedDiary/Act"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = 110.0
+offset_right = -176.0
+offset_bottom = 142.0
+grow_vertical = 0
+theme = ExtResource("5_4ytvr")
+text = "Играть"
+alignment = 0
+
+[node name="Settings" type="Control" parent="OpenedDiary"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsLabel" type="Label" parent="OpenedDiary/Settings"]
+layout_mode = 0
+offset_left = -224.0
+offset_top = -162.0
+offset_right = -99.0
+offset_bottom = -117.0
+text = "Настройки"
+label_settings = ExtResource("3_con2f")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OpenedDiary/Settings"]
+layout_mode = 0
+offset_left = -295.0
+offset_top = -116.0
+offset_right = -6.0
+offset_bottom = 136.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OpenedDiary/Settings/ScrollContainer"]
+layout_mode = 2
+
+[node name="Sound" type="Control" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SoundVolume" type="Label" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 3.0
+offset_right = 157.0
+offset_bottom = 33.0
+text = "1. Громкость музыки"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="SoundVolumeSlider" type="HSlider" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 36.0
+offset_right = 155.0
+offset_bottom = 60.0
+theme = ExtResource("8_i6lef")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SFXVolume" type="Label" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 60.0
+offset_right = 157.0
+offset_bottom = 90.0
+text = "2. SFX"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="SFXVolumeSlider" type="HSlider" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 91.0
+offset_right = 154.0
+offset_bottom = 115.0
+theme = ExtResource("8_i6lef")
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SaveDataManage" type="Control" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Saves" type="Label" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/SaveDataManage"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 115.0
+offset_right = 105.0
+offset_bottom = 144.0
+text = "3. Сохранения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="WipeAll" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/SaveDataManage"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 148.0
+offset_right = 95.0
+offset_bottom = 170.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Удалить всё"
+alignment = 0
+
+[node name="Language" type="Control" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Languages" type="Label" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 169.0
+offset_right = 103.0
+offset_bottom = 198.0
+text = "4. Язык"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="Russian" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 203.0
+offset_right = 62.0
+offset_bottom = 225.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Русский"
+
+[node name="English" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 207.0
+offset_right = 117.0
+offset_bottom = 229.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "English"
+
+[node name="Belorussian" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 209.0
+offset_right = 176.0
+offset_bottom = 231.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Беларускі"
+
+[node name="Language2" type="Control" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Languages" type="Label" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 242.0
+offset_right = 106.0
+offset_bottom = 271.0
+text = "4. Язык"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="Russian" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 281.0
+offset_right = 66.0
+offset_bottom = 303.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Русский"
+
+[node name="English" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2"]
+layout_mode = 0
+offset_left = 54.0
+offset_top = 274.0
+offset_right = 110.0
+offset_bottom = 296.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "English"
+
+[node name="Belorussian" type="Button" parent="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 272.0
+offset_right = 175.0
+offset_bottom = 294.0
+theme = ExtResource("5_4ytvr")
+theme_override_font_sizes/font_size = 12
+text = "Беларускі"
+
+[node name="SavesList" type="Control" parent="OpenedDiary"]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -330.0
+offset_top = 43.0
+offset_right = -63.0
+offset_bottom = 338.0
+grow_horizontal = 0
+
+[node name="SavesText" type="Label" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Сохранения"
+label_settings = ExtResource("4_mhnvy")
+
+[node name="MarginContainer" type="MarginContainer" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="OpenedDiary/SavesList/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OpenedDiary/SavesList/MarginContainer/ScrollContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="WipeActSaves" type="TextureRect" parent="OpenedDiary/SavesList"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -31.0
+offset_top = 6.0
+offset_right = -5.0
+offset_bottom = 32.0
+grow_horizontal = 0
+texture = ExtResource("10_sx3cw")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WhiteScreen" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 18.0
+offset_right = 84.0
+offset_bottom = 45.0
+theme = ExtResource("5_4ytvr")
+text = "Выйти"
+alignment = 0
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+
+[node name="BGMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_0bkvx")
+autoplay = true
+
+[connection signal="gui_input" from="ClosedDiary" to="." method="_on_closed_diary_gui_input"]
+[connection signal="gui_input" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_gui_input" binds= [1]]
+[connection signal="mouse_entered" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="Bookmarks/DemoBookmark" to="." method="_on_bookmark_mouse_exited" binds= [0]]
+[connection signal="gui_input" from="Bookmarks/FirstBookmark" to="." method="_on_bookmark_gui_input" binds= [2]]
+[connection signal="mouse_entered" from="Bookmarks/FirstBookmark" to="." method="_on_bookmark_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="Bookmarks/FirstBookmark" to="." method="_on_bookmark_mouse_exited" binds= [1]]
+[connection signal="gui_input" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_gui_input" binds= [-1]]
+[connection signal="mouse_entered" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="Bookmarks/SettingsBookmark" to="." method="_on_bookmark_mouse_exited" binds= [2]]
+[connection signal="gui_input" from="OpenedDiary/Back" to="." method="_on_back_gui_input"]
+[connection signal="gui_input" from="OpenedDiary/Forward" to="." method="_on_forward_gui_input"]
+[connection signal="pressed" from="OpenedDiary/Act/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="value_changed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound/SoundVolumeSlider" to="." method="_on_sound_volume_slider_value_changed"]
+[connection signal="value_changed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Sound/SFXVolumeSlider" to="." method="_on_sfx_volume_slider_value_changed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/SaveDataManage/WipeAll" to="." method="_on_wipe_all_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language/Russian" to="." method="_on_russian_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language/Belorussian" to="." method="_on_belorussian_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2/Russian" to="." method="_on_russian_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2/English" to="." method="_on_english_pressed"]
+[connection signal="pressed" from="OpenedDiary/Settings/ScrollContainer/VBoxContainer/Language2/Belorussian" to="." method="_on_belorussian_pressed"]
+[connection signal="gui_input" from="OpenedDiary/SavesList/WipeActSaves" to="." method="_on_wipe_act_saves_gui_input"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

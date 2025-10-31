@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=3 uid="uid://b6jklglij0vwy"]
+
+[ext_resource type="FontFile" uid="uid://b2kdgb2b5tdkl" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_erex2"]
+[ext_resource type="Script" uid="uid://d0lixnkqgkmbf" path="res://scenes/menu_and_splash/hints_propose.gd" id="1_mt7y8"]
+[ext_resource type="Texture2D" uid="uid://o8o6aa1hb8bj" path="res://assets/textures/ui/choises_panel.png" id="2_8rr70"]
+[ext_resource type="Texture2D" uid="uid://bfj0v83wvvyl2" path="res://assets/textures/ui/choise.png" id="3_2k3bb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8rr70"]
+font = ExtResource("1_erex2")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2k3bb"]
+font = ExtResource("1_erex2")
+font_color = Color(0, 0, 0, 1)
+
+[node name="HintsPropose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mt7y8")
+
+[node name="HintsProposeText" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -138.0
+offset_right = 126.0
+offset_bottom = -109.0
+grow_horizontal = 2
+text = "Желаете включить подсказки?"
+label_settings = SubResource("LabelSettings_8rr70")
+horizontal_alignment = 1
+
+[node name="ChoiseBlock" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -136.0
+offset_right = 170.0
+offset_bottom = 135.0
+texture = ExtResource("2_8rr70")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_group_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="ChoiseBlock"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ChoiseBlock/MarginContainer"]
+layout_mode = 2
+
+[node name="YesChoise" type="TextureRect" parent="ChoiseBlock/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_2k3bb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ChoiseBlock/MarginContainer/VBoxContainer/YesChoise"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Да"
+label_settings = SubResource("LabelSettings_2k3bb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoChoise" type="TextureRect" parent="ChoiseBlock/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_2k3bb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="ChoiseBlock/MarginContainer/VBoxContainer/NoChoise"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Нет"
+label_settings = SubResource("LabelSettings_2k3bb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MightBeChanged" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = 111.0
+offset_right = 178.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "Данный выбор можно изменить в настройках игры"
+label_settings = SubResource("LabelSettings_8rr70")
+horizontal_alignment = 1
+
+[node name="AboutHints" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "О подсказках.
+В The White Hell подсказки появляются
+после некоторого времени бездействия.
+Не знаете что делать?
+Просто подождите пока всё не станет явным.
+P.S. Иногда подсказки довольно занимательные...
+
+Нажмите для продолжения."
+label_settings = SubResource("LabelSettings_8rr70")
+horizontal_alignment = 1
+paragraph_separator = "/n"
+
+[node name="AboutFastChoises" type="Label" parent="."]
+visible = false
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Кое-что напоследок, будьте бдительны,/nнекоторые выборы не потерпят ождания,/nудачи.../n/nНажмите для продолжения."
+label_settings = SubResource("LabelSettings_8rr70")
+horizontal_alignment = 1
+paragraph_separator = "/n"
+
+[connection signal="gui_input" from="ChoiseBlock/MarginContainer/VBoxContainer/YesChoise" to="." method="_on_yes_choise_gui_input"]
+[connection signal="gui_input" from="ChoiseBlock/MarginContainer/VBoxContainer/NoChoise" to="." method="_on_no_choise_gui_input"]

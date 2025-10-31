@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3 uid="uid://dm1w6drw12fqk"]
+
+[ext_resource type="Script" uid="uid://bmg7vvjh0us8t" path="res://scenes/menu_and_splash/end_titles.gd" id="1_sly1k"]
+[ext_resource type="LabelSettings" uid="uid://ddnr1xqg8y5g8" path="res://assets/themes/act_names_label.tres" id="2_i47wl"]
+[ext_resource type="LabelSettings" uid="uid://bq8wexhnug834" path="res://assets/themes/title_label.tres" id="3_kgmmo"]
+[ext_resource type="Theme" uid="uid://cfwrgtuux4phk" path="res://assets/themes/button_theme.tres" id="4_g3yu8"]
+
+[node name="EndTitles" type="CanvasLayer"]
+script = ExtResource("1_sly1k")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="EndText" type="Label" parent="Content"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -258.0
+offset_right = 34.0
+offset_bottom = -213.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Конец"
+label_settings = ExtResource("2_i47wl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TitleText" type="Label" parent="Content"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -209.5
+offset_right = 100.0
+offset_bottom = 209.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Авторы идеи:/nЛавриш Иван/nМайсеёнок Илья/n/nГлавный художник:/nБирицкий Ян/n/nХудожник:/nМайсеёнок Илья/n/nПрограммист:/nЛавриш Иван"
+label_settings = ExtResource("3_kgmmo")
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "/n"
+
+[node name="Menu" type="Button" parent="Content"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = 216.0
+offset_right = 41.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_g3yu8")
+text = "Меню"
+
+[connection signal="pressed" from="Content/Menu" to="." method="_on_menu_pressed"]

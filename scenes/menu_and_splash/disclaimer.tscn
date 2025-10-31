@@ -1,0 +1,81 @@
+[gd_scene load_steps=6 format=3 uid="uid://4xni6o31stf1"]
+
+[ext_resource type="Script" uid="uid://diyannsmxyab0" path="res://scenes/menu_and_splash/disclaimer.gd" id="1_1c6wo"]
+[ext_resource type="FontFile" uid="uid://b2kdgb2b5tdkl" path="res://assets/fonts/Pacifico-Regular.ttf" id="1_57ubl"]
+[ext_resource type="Texture2D" uid="uid://o8o6aa1hb8bj" path="res://assets/textures/ui/choises_panel.png" id="3_dlvjm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_640dv"]
+font = ExtResource("1_57ubl")
+font_size = 25
+font_color = Color(1, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57ubl"]
+font = ExtResource("1_57ubl")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Disclaimer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1c6wo")
+
+[node name="DisclaimerBlock" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_dlvjm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="DisclaimerName" type="Label" parent="DisclaimerBlock"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -151.0
+offset_right = 100.0
+offset_bottom = -106.0
+grow_horizontal = 2
+text = "Дисклеймер"
+label_settings = SubResource("LabelSettings_640dv")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DisclaimerText" type="Label" parent="DisclaimerBlock"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -285.0
+offset_top = -75.0
+offset_right = 285.0
+offset_bottom = 162.0
+grow_horizontal = 2
+text = "Мы ни в коем случае не пропагандируем образ жизни
+продемонстрированный в данной игре.
+Не стоит следовать примерам из данной игры,
+думайте о последствиях.
+Жизнь - не игра, за каждое решение придётся платить свою цену.
+LavinLab"
+label_settings = SubResource("LabelSettings_57ubl")
+horizontal_alignment = 1
+paragraph_separator = "/n"
+
+[node name="DisclaimerTimer" type="Timer" parent="."]
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="timeout" from="DisclaimerTimer" to="." method="_on_timer_timeout"]
