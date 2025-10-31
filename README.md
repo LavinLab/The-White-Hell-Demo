@@ -31,37 +31,3 @@ We’re an indie studio of three passionate creators experimenting with visual n
 ## 📜 License  
 This project is released under the **MIT License**.  
 Feel free to use, modify, and distribute it in accordance with the license terms.
-
----
-
-## 🌐 English Version
-
-### ❄️ The White Hell — Demo (Open Source)  
-_A Visual Novel in Black & White • Made with Godot_  
-**by LavinLab**
-
-### 🧊 About  
-**The White Hell** is a short demo of a visual novel built around themes of solitude, memory, and frost. Designed in a stark black-and-white aesthetic, it offers a quiet, haunting experience that invites reflection.
-
-Created with the **Godot Engine**, and available for:  
-🖥️ **Windows** • 🐧 **Linux** • 📱 **Android** • 🌐 **Web**
-
-### 🎮 Highlights  
-- Open-source and easy to explore  
-- Cross-platform compatibility  
-- Minimalist black & white visuals  
-- Clean codebase for learning and modding  
-- Ready for localization
-
-### 📦 How to Run  
-```bash
-git clone https://github.com/your-repo/TheWhiteHellDemo.git
-```
-Open in **Godot 3.x or 4.x**, export to your platform, and launch.
-
-### 🧑‍💻 About Us  
-**LavinLab** is a small indie team of three, crafting experimental stories and emotional experiences.  
-📧 Reach us at: **lavinlab@mail.ru**
-
-### 📜 License  
-Released under the **MIT License** — free to use and remix.
