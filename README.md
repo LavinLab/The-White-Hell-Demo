@@ -20,9 +20,13 @@ Here’s a glimpse into the world of *The White Hell*:
 
 ![Main Menu](screenshots/main_menu.png)
 
-![Dialogue Scene](screenshots/dialogue_scene.png)
+![Menu](screenshots/menu.png)
 
-![Exploration](screenshots/exploration.png)
+![Shop Scene](screenshots/shop.png)
+
+![Gangsters](screenshots/gangsters.png)
+
+![Game Name](screenshots/game_name.png)
 
 ## 📦 Installation  
 1. Clone the repository:  
