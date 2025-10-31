@@ -29,12 +29,12 @@ Here’s a glimpse into the world of *The White Hell*:
    ```bash
    git clone https://github.com/your-repo/TheWhiteHellDemo.git
    ```
-- Open the project in Godot 3.x or 4.x
-- Export to your desired platform (Android, Web, Desktop)
-- Launch and explore the White Hell...
+2. Open the project in Godot 3.x or 4.x
+3. Export to your desired platform (Android, Web, Desktop)
+4. Launch and explore the White Hell...
 ## 🧑‍💻 About LavinLab
 We’re an indie studio of three passionate creators experimenting with visual novels, ethics, and aesthetics.
-## 📧 Contact us: lavinlab@mail.ru
+📧 Contact us: lavinlab@mail.ru
 ## 📜 License
 This project is released under the MIT License.
 Feel free to use, modify, and distribute it in accordance with the license terms.
