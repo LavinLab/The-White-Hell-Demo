@@ -29,7 +29,7 @@ Here’s a glimpse into the world of *The White Hell*:
    ```bash
    git clone https://github.com/LavinLab/The-White-Hell-Demo.git
    ```
-2. Open the project in Godot 3.x or 4.x
+2. Open the project in Godot 4.x
 3. Export to your desired platform (Android, Web, Desktop)
 4. Launch and explore the White Hell...
 
