@@ -27,7 +27,7 @@ Here’s a glimpse into the world of *The White Hell*:
 ## 📦 Installation  
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-repo/TheWhiteHellDemo.git
+   git clone https://github.com/LavinLab/The-White-Hell-Demo.git
    ```
 2. Open the project in Godot 3.x or 4.x
 3. Export to your desired platform (Android, Web, Desktop)
